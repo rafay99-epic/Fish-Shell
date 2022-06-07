@@ -185,7 +185,7 @@ function packages_arch()
     if [ ! -e "$PARU" ]; 
         then
             # Installing Paru 
-            sudo pacman -S --needed base-devel
+            sudo pacman -S base-devel --noconfirm --needed
             echo -ne "
 -------------------------------------------------------------------------
                Installing Paru
@@ -311,5 +311,5 @@ function runner()
     
     bye
 }
-
+runner
 
