@@ -184,6 +184,18 @@ function packages_arch()
 "    
     if [ ! -e "$PARU" ]; 
         then
+            echo -ne "
+-------------------------------------------------------------------------
+           Installing Rust
+-------------------------------------------------------------------------
+"
+            sudo pacman -S rust --noconfirm --needed 
+            
+            echo -ne "
+-------------------------------------------------------------------------
+           Installing Base System for ARU-Helper
+-------------------------------------------------------------------------
+"
             # Installing Paru 
             sudo pacman -S base-devel --noconfirm --needed
             echo -ne "
