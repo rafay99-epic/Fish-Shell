@@ -32,6 +32,14 @@ if status is-interactive
     alias rm="rm -ir"
     alias cp="cp -r"
     alias mv="mv -i"
+    alias dir='dir --color=auto'
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias grep='grep --color=auto'
+    alias grubup="sudo update-grub"
+    alias upd='/usr/bin/update'
+    alias vdir='vdir --color=auto'
+    alias wget='wget -c '
 end
 
 
