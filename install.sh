@@ -238,6 +238,20 @@ echo -ne "
 -------------------------------------------------------------------------
 "
     paru -S ccat --noconfirm --needed
+
+    echo -ne "  
+-------------------------------------------------------------------------
+            Install Fonts
+            1. Nerd Mononoki Font
+            2. Meslo Nerd Font Power10K
+            3. Meslo Storm Font
+-------------------------------------------------------------------------
+"
+    paru -S nerd-fonts-mononoki --noconfirm --needed
+    paru -S ttf-meslo-nerd-font-powerlevel10k --noconfirm --needed
+    paru -S nerd-fonts-meslo --noconfirm --needed
+
+    cp -r NerdFonts  ~/.local/share
 }
 
 #  Debian and Ubuntu   Functions
@@ -290,11 +304,10 @@ echo -ne "
            2. Font Awesome Fonts
 -------------------------------------------------------------------------
 "
-    # Installing Powerline fonts
-    sudo apt-get install -y fonts-powerline
-    
-    #Instaling font awesome 
-    sudo apt-get install -y fonts-font-awesome
+    sudo apt-get install fonts-powerline -y
+    sudo apt-get install fonts-font-awesome -y
+    sudo apt-get install fonts-mononoki -y
+    sudo apt-get install fontconfig -y
 
     # Install powerline fonts
     cd ~
@@ -310,6 +323,18 @@ echo -ne "
     # moving the fonts
     mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
+
+    cd ~
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+    mkdir -p .local/share/fonts
+    unzip Meslo.zip -d .local/share/fonts
+    cd .local/share/fonts
+    rm *Windows*
+    cd ~
+    rm Meslo.zip
+    fc-cache -fv
+    
+    cp -r NerdFonts  ~/.local/share
 }
 
 function runner()
