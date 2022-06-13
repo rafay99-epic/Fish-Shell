@@ -239,9 +239,23 @@ echo -ne "
 "
     paru -S ccat --noconfirm --needed
 
+    echo -ne "
+-------------------------------------------------------------------------
+           Installing  Powerline-font
+-------------------------------------------------------------------------
+"
+    paru -R ttf-hack --noconfirm --needed   
+    paru -S powerline-fonts-git --noconfirm --needed
+    
+    echo -ne "
+-------------------------------------------------------------------------
+           Installing  Awesome-font
+-------------------------------------------------------------------------
+"   
+    paru -S ttf-font-awesome --noconfirm --needed
     echo -ne "  
 -------------------------------------------------------------------------
-            Install Fonts
+            Install Nerd Fonts
             1. Nerd Mononoki Font
             2. Meslo Nerd Font Power10K
             3. Meslo Storm Font
@@ -296,7 +310,7 @@ echo -ne "
     # Installing lsd 
     sudo dpkg -i lsd.deb
 
-echo -ne "
+    echo -ne "
 -------------------------------------------------------------------------
            --- Installing Fonts ---
 
